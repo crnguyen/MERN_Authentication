@@ -1,13 +1,15 @@
-require("dotenv").config;
-//passport strategy
-const JwtStrategy = require("passport").Strategy;
-const ExtractJwt = require("passport-jwt").ExtractJwt;
-const mongoose = require("mongoose");
-const { deserializeUser } = require("passport");
-const User = mongoose.model("User");
+require('dotenv').config();
 
-//options is an object literal containing the otions to control
-//how the token is extracted from the request of verified
+// A passport strategy for authenicating with a JSON Web Token
+// This allows to authenicate endpoints using the token.
+const JwtStrategy = require('passport-jwt').Strategy;
+const ExtractJwt = require('passport-jwt').ExtractJwt;
+const mongoose = require('mongoose');
+
+// const { deserializeUser } = require('passport');
+// const User = mongoose.model('User');
+// options is an object literal containing options to control
+// how the token is extracted from the request or verified
 
 const options = {}
 //jwt from request (required) function that accepts a request
