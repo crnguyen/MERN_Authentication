@@ -5,12 +5,11 @@ require('dotenv').config();
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const mongoose = require('mongoose');
-
 // const { deserializeUser } = require('passport');
-// const User = mongoose.model('User');
+const User = mongoose.model('User');
+const db = require("../models");
 // options is an object literal containing options to control
 // how the token is extracted from the request or verified
-
 const options = {}
 //jwt from request (required) function that accepts a request
 //as the only parameter and returns either the JWT as a string or null.
